@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="media/logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light p-0 ">
+      <div class="container">
+        <div class="logo d-flex align-items-center ">
+          <img src="media/logo.png" class="d-block w-100" alt="logo" />
+          <h1 class="h4 m-0 p-0 text-capitalize"> customer transactions</h1>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <div class="search-box">
+                <button class="btn-search">
+                  <i class="fas fa-search"></i>
+                </button>
+                <input
+                  type="text"
+                  class="input-search"
+                  placeholder="Type to Search..."
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <aside class="d-flex position-fixed">
+      <div
+        class="side-menu bg-black text-white p-4 d-flex flex-column justify-content-between"
+      >
+        <div class="links">
+          <ul class="m-0 p-0">
+            <li
+              class="wow text-capitalize py-2 px-1 mb-1"
+              data-wow-delay="0.1s"
+            >
+            <i class="fa-solid fa-house"></i>
+              Dashboard
+            </li>
+            <li
+              class="wow text-capitalize py-2 px-1 mb-1"
+              data-wow-delay="0.2s"
+            >
+            <i class="fa-solid fa-chart-simple"></i>
+              chart
+            </li>
+            <li
+              class="wow text-capitalize py-2 px-1 mb-1"
+              data-wow-delay="0.3s"
+            >
+            <i class="fa-brands fa-rocketchat"></i>
+              chats
+            </li>
+            <li
+              class="wow text-capitalize py-2 px-1 mb-1"
+              data-wow-delay="0.4s"
+            >
+            <i class="fa-solid fa-gear"></i>
+              settings
+            </li>
+          </ul>
+        </div>
+        <div class="nav-footer">
+          <div class="social">
+            <a href="https://github.com/Mu7ammedNasser"><i class="fa-brands fa-github"></i></i></a>
+            <a href="https://www.linkedin.com/in/muhammad-nasser-745a1b256/"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+          <p>Copyright © NASSER.R</p>
+        </div>
+      </div>
+
+      <div
+        class="menu bg-white d-flex flex-column justify-content-between align-items-center vh-100"
+      >
+        <div class="icon">
+          <i
+            class="i text-black fa-solid open-close-icon fa-2x fa-align-justify"
+          ></i>
+        </div>
+        <div class="share">
+          <i class="fa-solid fa-globe i text-black d-block"></i>
+          <i class="fa-solid fa-share-nodes text-black i"></i>
+        </div>
+      </div>
+    </aside>
+
+    <div class="container w-75 m-auto row py-4">
+      <div class="mb-3 col-md-5 d-flex align-items-center gap-2">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          id="byName"
+          type="text"
+          class="form-control text-capitalize"
+          placeholder="Search By customer name"
+        />
+      </div>
+      <div class="mb-3 col-md-5 d-flex align-items-center gap-2">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input
+          id="byAmount"
+          type="number"
+          class="form-control text-capitalize"
+          placeholder="Search By transaction amount"
+        />
+      </div>
+
+      <table class="my-5" id="dataTable">
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Customer Name</th>
+            <th>Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data rows will be inserted here -->
+        </tbody>
+      </table>
+
+      <div id="chartContainer" class="chartcontainer m-auto my-2">
+        <canvas id="transactionsChart"></canvas>
+    </div>
+    
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="node_modules/@fortawesome/fontawesome-free/js/all.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
